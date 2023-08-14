@@ -23,11 +23,11 @@ export const SearchResults = () => {
             return (
               <div
                 key={id}
-                className='flex px-5 gap-5'
+                className='flex px-5 gap-5 sm:flex-row flex-col'
                 onClick={() => navigate(`/item/${id}`)}
               >
                 <img src={thumbnail} alt={title} />
-                <div>
+                <div className='sm:text-left text-center'>
                   <p className='font-bold text-xl'>
                     {new Intl.NumberFormat('es-PE', {
                       currency: 'PEN',
@@ -36,7 +36,9 @@ export const SearchResults = () => {
                   </p>
                   <p>{title}</p>
                 </div>
-                <p className='w-[20%] ml-auto'>{seller.nickname}</p>
+                <p className='sm:w-[20%]  sm:ml-auto ml-0 text-center '>
+                  {seller.nickname}
+                </p>
               </div>
             );
           })}
